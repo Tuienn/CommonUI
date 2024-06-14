@@ -1,0 +1,283 @@
+/* Xử lý phần header */
+#header {
+    height: var(--header-height);
+    background-color: var(--black-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 40px 10px var(--box-shadow-color);
+    /* z-index: 2; */
+    display: flex;
+
+    justify-content: space-between;
+}
+
+#nav {
+    display: flex;
+    position: relative;
+}
+
+#nav li,
+.header_logo li {
+    display: inline-block;
+    position: relative;
+}
+
+.header_logo {
+    width: var(--header-height);
+    height: var(--header-height);
+    color: var(--white-color);
+    font-size: 30px;
+    /* 3 dòng căn giữa logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav>li {
+    /* Chữ */
+    line-height: var(--header-height);
+    font-weight: bold;
+    color: white;
+    /* Cấu trúc */
+    width: 180px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+}
+
+#nav>li:hover .subnav {
+    display: grid;
+}
+
+#nav>li:hover,
+.header_logo_user:hover {
+    font-weight: bold;
+    color: var(--nav-hover-color);
+    /* background-color: var(--nav-hover-color); */
+    cursor: pointer;
+    /* Hiệu ứng */
+    transform: translateY(-2px);
+    transition: all ease-in-out 0.2s;
+}
+
+/* Xử lý sub nav lựa chọn */
+/* Các subnav Có thể ái sử dụng lại */
+.subnav {
+    display: none;
+    text-align: left;
+    /* Không ảnh hưởng đến các phần tử khác */
+    position: absolute;
+    
+    background-color: white;
+    box-shadow: 0px 10px 20px 1px var(--box-shadow-color);
+}
+
+.subnav li {
+    /* Cấu trúc */
+    display: block;
+    /* Content */
+    font-size: 1rem;
+    font-family: 'rubik', sans-serif;
+    color: var(--black-color);
+    /* align-items: center; */
+}
+
+#nav .subnav, .header_logo_user .subnav{
+    width: 15rem;
+    top: 53.5px;
+}
+
+#nav .subnav li, .header_logo_user .subnav li{
+    padding: 0.5rem;
+    line-height: var(--header-height);
+    font-weight: bold;
+}
+
+.subnav li:hover{
+    color: black;
+    background-color: #bacdcc;
+
+    /* Hiệu ứng */
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+/* Xử lý phần logo*/
+.header_logo_user {
+    /* đã xử lý bên trên */
+}
+
+.header_logo_user:hover {
+    /* đã xử lý bên trên */
+}
+
+.header_logo .subnav {
+    /* Chữa cháy */
+    /* Căn vị trí bên phải */
+    right: 0;
+    /* Tách với logo user */
+    top: 54px;
+    /* Căn lề phải cho nội dung */
+    
+}
+
+.header_logo .subnav li {
+    /* Đã viết trên cung với #nav .subnav li*/
+    text-align: right;
+}
+
+.header_logo:hover .subnav {
+    display: block;
+}
+
+/* Xử lý phần thông tin */
+/* 2. Modal */
+/* 2.1. Login */
+/* Lớp modal chiêm full màn hình, chặn mọi thao tác*/
+.modal {
+    /* display: none; */
+    /* Cả  5 dòng cố định */
+    position: fixed;
+    /* Tạo phần tử có vị trí cố định */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* 4 chỉ số chiếm full màn hình */
+    display: none;
+    /* Set các thẻ con nằm ngang */
+    /*  Tạo bố cục để dễ dàng chình sửa các con*/
+    /* Kết hợp với margin: auto của modal_body để căn body ra giữa */
+}
+
+/* Lớp phủ nhìn xuyên qua */
+.modal_overlay {
+    position: absolute;
+    /* Con của cha (.modal) */
+    width: 100%;
+    height: 100%;
+    /* Chiều dài vả rộng theo cha */
+    background: rgb(0, 0, 0, 0.4);
+    /* Màu phủ trong suốt */
+}
+
+/* Xử lý  modal_body*/
+/* Hiệu ứng */
+@keyframes Growth {
+    from {
+        opacity: 0;
+        /*Làm mờ*/
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tạo phần chính để viết nội dung */
+.modal_body {
+    background-color: var(--white-background-color);
+    margin: auto;
+    position: relative;
+    /* Không ảnh hưởng kích thước phần tử khác, cũng giúp modal_body nổi lên trên modal_overlay*/
+    z-index: 1;
+    /* z-index default = 0 */
+    /* Sử dụng để đẩy modal_body lên trên gần mắt người dùng */
+    /* Chức năng gần như position: realative */
+    border-radius: 10px;
+    /* Bo cong viền */
+    animation: Growth ease-in 0.22s;
+    /*Hiệu ứng ảnh to dần  */
+}
+
+.infor_form {
+    padding: 30px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.modal_close {
+    text-align: right;
+    cursor: pointer;
+}
+
+.infor_container {
+    /* position: relative; */
+}
+
+.group_input {
+    margin-top: 10px;
+    height: 90px;
+    box-sizing: border-box;
+}
+
+.modal_input_title_text {
+    font-size: 1.3rem;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.modal_input_text{
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+    width: 100%;
+    background-color: var(--white-color);
+}
+
+.input_text_error{
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--error-text-color);
+}
+
+/* Từ 231 - 241 thì 233, 238, 239 để setup vị trí subnav */
+.input_title_text_gender{
+    position: relative;
+    width: 50%;
+}
+
+.input_title_text_gender .subnav{
+    top: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.input_title_text_gender .subnav li{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.infor_container_confirm {
+    margin-top: 20px;
+}
+
+.input_title_text_gender:hover .subnav {
+    display: grid;
+}
+
+.confirm_btn{
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white-color);
+    background-color: rgb(73, 181, 216);
+    border: 0;
+}
+
+.confirm_btn:hover{
+    cursor: pointer;
+    background-color:  rgb(117, 117, 118);
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommonForm</title>
+    <!-- Link css -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="main">
+        <div id="header">
+            <ul id="nav">
+                <div class="header_logo"><i class="fa-brands fa-apple" ></i></div>
+                <li id="">THANH TOÁN</li>
+                <li>   
+                    QUẢN LÝ TKB 
+                    <i class="fa-solid fa-angle-down" style="font-weight: bolder; padding-left: 5px;"></i>
+                
+                    <ul class="subnav">
+                        <li id="">Con 1</li>
+                        <li id="">Con 2</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="header_logo header_logo_user">
+                <i class="fa-solid fa-circle-user"></i>
+                    <ul class="subnav">
+                        <li id="subnav_li_infor">THÔNG TIN CÁ NHÂN   |<i class="fa-solid fa-gear", style="padding-left: 5px;"></i></li>
+                        <li id="subnav_li_logout">ĐĂNG XUẤT  |<i class="fa-solid fa-right-from-bracket", style="padding-left: 5px;"></i></li>
+                    </ul>
+            </div>
+        </div>
+
+        <!-- Lớp modal -->
+         <div class="modal">
+            <div class="modal_overlay"></div>
+            <!-- Chứa full nội dung -->
+            <div class="modal_body">
+                <!-- Dấu x + container -->
+                <div class="infor_form">
+                    <!-- Dấu x -->
+                    <div class="modal_close">
+                        <i class="fa-solid fa-xmark" style="font-size: 30px;"></i>
+                    </div>
+                    <!-- Nội dung = input + button -->
+                    <div class="infor_container">
+                        <!-- Input -->
+                        <div class="infor_container_content">
+                            <div class="group_input">
+                                <div class="modal_input_title_text">Họ tên</div>
+                                <input type="text" class = "modal_input_text">
+                                <div class="input_text_error"></div>
+                            </div>
+                            <div class="group_input">
+                                <div class="modal_input_title_text">Ngày sinh</div>
+                                <input type="date" class="modal_input_text" min="1930-01-01" max="2024-12-31">
+                                <div class="input_text_error"></div>
+                            </div>
+                            <div class="group_input">
+                                <div class="modal_input_title_text">Địa chỉ</div>
+                                <input type="text" class="modal_input_text">
+                                <div class="input_text_error"></div>
+                            </div>
+                            <div class="group_input">
+                                <div class="modal_input_title_text">Giới tính</div>
+                                <div class="input_title_text_gender">
+                                    <input type="text" class="modal_input_text" disabled>
+                                    <ul class="subnav">
+                                        <li id="li_one">Nam</li>
+                                        <li id="li_two">Nữ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="infor_container_confirm">
+                            <button class="confirm_btn">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <script src="modalHandle.js"></script>
+</body>
+</html>

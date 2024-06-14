@@ -1,0 +1,68 @@
+:root {
+    --white-color: white;
+    --white-background-color: rgb(245, 242, 242);
+    --black-color:  rgb(31, 31, 31);
+    --box-shadow-color: rgba(2, 1, 1, 0.4);
+    --nav-hover-color: #70B3B5;
+    --border-color: gray;
+    --header-height: 52px;
+    --error-text-color: red;
+}
+
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    /* Mặc định là 16px */
+    line-height: 1.25rem;
+    /*rem phụ thuộc vào thẻ html*/
+    font-family: 'rubik', sans-serif;
+    box-sizing: border-box;
+    /*Nếu thay đổi padding, border thì phần tử giữ nguyên kích thước tổng thể ban đầu*/
+    width: 100%;
+    color: var(--text-color);
+}
+
+body{
+    margin: 0;
+}
+
+.grid {
+    width: 1700px;
+    /* Chiều dài nhỏ hơn chiều dài của trình duyệt*/
+    max-width: 100%;
+    margin: 0 auto;
+    /* Căn giữa nội dung */
+}
+
+.grid_full_width {
+    width: 100%;
+    /* Trường hợp dự phòng nếu ko dùng 1820px nữa */
+}
+
+.grid_row {
+    display: flex;
+    /* Các con của nó sẽ trên cùng 1 hàng */
+    flex-wrap: wrap;
+    /* Con nhảy xuống hàng dưới nếu không đủ chỗ */
+}
+
+/* button chung cho cả trình duyệt*/
+.btn{
+    width: 120px;
+    height: 35px;
+    border: 1px var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white-color);
+}
