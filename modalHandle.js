@@ -74,8 +74,6 @@ function setModalErrorText(){
     
 }
 
-
-
 var confirm_btn = document.querySelector('.confirm_btn');
 confirm_btn.addEventListener("click", setModalErrorText);
 

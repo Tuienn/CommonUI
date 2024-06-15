@@ -1,6 +1,8 @@
 :root {
     --white-color: white;
     --white-background-color: rgb(245, 242, 242);
+    --linear-main-background: linear-gradient(-45deg, #18A5A7, #B6C0C5);
+    /* Màu này dùng luôn cho button */
     --black-color:  rgb(31, 31, 31);
     --box-shadow-color: rgba(2, 1, 1, 0.4);
     --nav-hover-color: #70B3B5;
@@ -51,15 +53,6 @@ body{
     /* Các con của nó sẽ trên cùng 1 hàng */
     flex-wrap: wrap;
     /* Con nhảy xuống hàng dưới nếu không đủ chỗ */
-}
-
-/* button chung cho cả trình duyệt*/
-.btn{
-    width: 120px;
-    height: 35px;
-    border: 1px var(--border-color);
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 a{

@@ -266,18 +266,30 @@
 .confirm_btn{
     margin-top: 15px;
     width: 100%;
-    height: 40px;
-    border-radius: 10px;
+    height: 45px;
+    border-radius: 20px;
 
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--white-color);
-    background-color: rgb(73, 181, 216);
-    border: 0;
+
+    background: var(--linear-main-background) 
 }
 
 .confirm_btn:hover{
     cursor: pointer;
-    background-color:  rgb(117, 117, 118);
+    background: linear-gradient(to right, #ADD8E6, #d292ed);;
+    color: #18A5A7;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.container{
+    background: var(--linear-main-background);
+    height: calc(100vh - var(--header-height));
 }
 
